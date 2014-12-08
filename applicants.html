@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://mod.postimage.org/website-english-family.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.3.5/tabletop.js"></script>
+    <script type="text/javascript" src="js/dropdown.js"></script>
+  </head>
+  <body>
+    <div id="dropdown-menu">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Charitable Works</li>
+                <li>Membership</li>
+                <li>Private Events</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+
+    <div id="navbar">
+        <div id="nav-logo"><img src="images/logo-white-01.png" width="100%"></div>
+        <div id="navRow">
+            <ul>
+                <a href="index.html"><li>Home</li></a>
+                <li>About</li>
+                <li>Charitable Works</li>
+                <a href="member-application.html"><li>Membership</li></a>
+                <li>Private Events</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        
+        <div id="navbutton"><img src="images/navbutton.png" width="100%"></div>
+        <div id="upbutton"><img src="images/navbutton.png" width="100%"></div>
+    </div>
+    <div class="darkscreen"></div>
+    <div id="wrapper">
+        <div id="titleResizer"><h1 class="title"><img src="images/applicants-header-gold.png" width="100%"></h1></div>
+        <div id="responseArea"></div>
+        <div class="clear"></div>
+    </div>
+    
+	<script id="submissionScript" type="text/x-handlebars-template">
+		<div class="submission">
+			<div class="center">
+				<div class="container">
+					<div class="dummy"></div>
+					<div class="element">
+						<div class="icon" style="background-image: url('{{{photo}}}');"></div>
+					</div>
+				</div>
+			</div>
+			<h2>{{name}}</h2>
+			
+			<div class="lightbox">
+				<div class="lightboxBar">
+					<div class="closeBtn"></div>
+				</div>
+				
+				<div class="icon2" style="background-image: url('{{{photo}}}');"></div>
+				<div class="titlebar">
+					<h2 class="nametitle">{{name}}</h2>
+				</div><div class="clear"></div>
+				<div class="leftcol">
+					<h2 class="appHeader">CONTACT INFORMATION</h2>
+					<h3><span class="label">Date of Birth:</span> {{dob}}</h3>
+					<h3><span class="label">Place of Birth:</span> {{placebirth}}</h3>
+					<h3><span class="label">Residential Address:</span> {{resaddress}}</h3>
+					<h3><span class="label">Business Address:</span> {{busaddress}}</h3>
+					<h3><span class="label">Send mail to:</span> {{mailto}}</h3>
+					<h3><span class="label">Send bill to:</span> {{billto}}</h3>
+					<h3><span class="label">Cell Phone:</span> {{cellphone}}</h3>
+					<h3><span class="label">Residence Phone:</span> {{resphone}}</h3>
+					<h3><span class="label">Business Phone:</span> {{busphone}}</h3>
+					<h3><span class="label">Personal Email:</span> {{personalemail}}</h3>
+					<h3><span class="label">Business Email:</span> {{busemail}}</h3>
+					
+					<h2 class="appHeader">OCCUPATION</h2>
+					<h3><span class="label">Name of Employer:</span> {{employer}}</h3>
+					<h3><span class="label">Occupation:</span> {{occupation}}</h3>
+					<h3><span class="label">Position:</span> {{position}}</h3>
+					<h3><span class="label">Assistant Name:</span> {{asstname}}</h3>
+					<h3><span class="label">Assistant Phone:</span> {{asstphone}}</h3>
+					
+					<h2 class="appHeader">MEMBERSHIP TYPE</h2>
+					<h3><span class="label">Membership:</span> {{membtype}}</h3>
+					
+					<h2 class="appHeader">TRAVEL</h2>
+					<h3><span class="label">Partake in seasonal travel?:</span> {{travelyesno}}</h3>
+					<h3><span class="label">Time of year for travel:</span> {{traveltime}}</h3>
+					<h3><span class="label">Seasonal Address:</span> {{seasonaladdress}}</h3>
+					
+					<h2 class="appHeader">EDUCATION</h2>
+					<h3><span class="label">College or University Attended:</span> {{college}}</h3>
+					<h3><span class="label">Degree(s) Attained:</span> {{degree}}</h3>
+					
+					<h2 class="appHeader">CLUB AFFILIATIONS</h2>
+					<h3><span class="label">Civic and Club Affiliations:</span> {{clubaffiliations}}</h3>
+					
+					<h2 class="appHeader">SPONSOR</h2>
+					<h3><span class="label">Primary Sponsor:</span> {{sponsor}}</h3>
+					
+				</div>
+				<div class="rightcol">
+					
+					<h2 class="appHeader">MARITAL INFORMATION</h2>
+					<h3><span class="label">Marital Status:</span> {{maritalstatus}}</h3>
+					
+					<h2 class="appHeader">SPOUSE INFORMATION</h2>
+					<h3><span class="label">Spouse Name:</span> {{spousename}}</h3>
+					<h3><span class="label">Nickname:</span> {{spousenickname}}</h3>
+					<h3><span class="label">Date of Birth:</span> {{spousedob}}</h3>
+					<h3><span class="label">Anniversary Date:</span> {{anniversary}}</h3>
+					<h3><span class="label">College or University attended:</span> {{spousecollege}}</h3>
+					<h3><span class="label">Degree(s) Attained:</span> {{spousedegree}}</h3>
+					<h3><span class="label">Email</span> {{spouseemail}}</h3>
+					<h3><span class="label">Cell Phone (in case of emergency):</span> {{spousecell}}</h3>
+					<h3><span class="label">Civic and Club Affiliations:</span> {{spouseaffiliations}}</h3>
+					
+					<h2 class="appHeader">CHILDREN</h2>
+					<h3><span class="label">Children?:</span> {{childrenyesno}}</h3>
+					<h3><span class="label">Child #1 | Name:</span> {{c1name}}</h3>
+					<h3><span class="label">Sex:</span> {{c1sex}}</h3>
+					<h3><span class="label">Date of Birth:</span> {{c1dob}}</h3>
+					<h3><span class="label">Interests/ Hobbies:</span> {{c1hobbies}}</h3><hr>
+					<h3><span class="label">Child #2 | Name:</span> {{c2name}}</h3>
+					<h3><span class="label">Sex:</span> {{c2sex}}</h3>
+					<h3><span class="label">Date of Birth:</span> {{c2dob}}</h3>
+					<h3><span class="label">Interests/ Hobbies:</span> {{c2hobbies}}</h3><hr>
+					<h3><span class="label">Child #3 | Name:</span> {{c3name}}</h3>
+					<h3><span class="label">Sex:</span> {{c3sex}}</h3>
+					<h3><span class="label">Date of Birth:</span> {{c3dob}}</h3>
+					<h3><span class="label">Interests/ Hobbies:</span> {{c3hobbies}}</h3><hr>
+					<h3><span class="label">Child #4 | Name:</span> {{c4name}}</h3>
+					<h3><span class="label">Sex:</span> {{c4sex}}</h3>
+					<h3><span class="label">Date of Birth:</span> {{c4dob}}</h3>
+					<h3><span class="label">Interests/ Hobbies:</span> {{c4hobbies}}</h3>
+					
+					<h2 class="appHeader">RESIDENCE AND EMPLOYMENT HISTORY</h2>
+					<h3><span class="label">Address History (past 10 years):</span> {{addresshistory}}</h3>
+					<h3><span class="label">Employment History (past 10 years):</span> {{employmenthistory}}</h3>
+					
+				</div>
+				
+			</div>
+			
+			<div class="expand">VIEW FULL APPLICATION</div>
+		</div>
+    </script>
+    
+	<script type="text/javascript">
+      var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1zHKgMd4YCzt5uC1kv8xaTOOeRC_nuyRsPSnrXrGgzhI/pubhtml';
+      $(document).ready( function() {
+        Tabletop.init( { key: public_spreadsheet_url,
+                         callback: showInfo,
+                         parseNumbers: true } );
+      });
+        
+      function showInfo(data, tabletop) {
+        var source   = $("#submissionScript").html();
+        var template = Handlebars.compile(source);
+        $.each( tabletop.sheets("Form Responses 1").all(), function(i, submissionTemplate) {
+          var html = template(submissionTemplate);
+          $("#responseArea").append(html);
+        });
+      }
+	     
+    </script>
+    
+    <script>
+		var top = $('html').offset().top;
+
+		// Submission box hover color change
+		$(document).on('mouseenter','.submission',function(){
+			$(this) .css("background-color", "#222");});
+		$(document).on('mouseleave','.submission',function(){
+			$(this) .css("background-color", "rgba(64, 64, 64, 0.7)");});
+		
+		// Expand button hover color change
+		$(document).on('mouseenter','.expand',function(){
+			$(this) .css("background-color", "#E0A500");});
+		$(document).on('mouseleave','.expand',function(){
+			$(this) .css("background-color", "#F5D130");});
+		
+		// Close button hover color change	
+		$(document).on('mouseenter','.closeBtn',function(){
+			$(this) .css("background-color", "#E0A500");});
+		$(document).on('mouseleave','.closeBtn',function(){
+			$(this) .css("background-color", "#F5D130");});
+		
+		$(document).on('click','.expand',function(){
+			$(this) .prev(".lightbox") .fadeIn(350);
+			$(".darkscreen") .fadeIn(350);
+			$(".lightbox") .css("top", top);
+		});
+		
+		$(document).on('click','.closeBtn',function(){
+			$(".submission") .find(".lightbox") .fadeOut(350);
+			$(".darkscreen") .fadeOut(350);
+		});
+		
+	</script>
+    
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://mod.postimage.org/website-english-family.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.3.5/tabletop.js"></script>
+    <script type="text/javascript" src="js/dropdown.js"></script>
+</head>
+<body>
+        <div id="dropdown-menu">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Charitable Works</li>
+                <li>Membership</li>
+                <li>Private Events</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+
+    <div id="navbar">
+        <div id="nav-logo"><img src="images/logo-white-01.png" width="100%"></div>
+        <div id="navRow">
+            <ul>
+                <a href="index.html"><li>Home</li></a>
+                <li>About</li>
+                <li>Charitable Works</li>
+                <a href="member-application.html"><li>Membership</li></a>
+                <li>Private Events</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        
+        <div id="navbutton"><img src="images/navbutton.png" width="100%"></div>
+        <div id="upbutton"><img src="images/navbutton.png" width="100%"></div>
+    </div>
+    <div id="wrapper">
+    <div class="uclubLogo"><img src="images/uclub-logo.png" width="100%"></div>
+        <div id="photoGrid">
+            <a href="member-application.html">
+            <div id="dominantHome">
+                <img src="images/conferencelight.png" width="100%" title="Conference Room">
+                <h2 class="homeHeader"><span>ONE FAMILY</span></h2>
+                <h4 class="membershipBtn">MEMBERSHIP</h4>
+            </div></a>
+            <div class="topleft">
+                <img src="images/gym.png" width="100%" title="The UClub Gym">
+                <h2 class="homeHeadertr"><span>ONE CAUSE</span></h2>
+                <h4>CHARITABLE WORKS</h4>
+            </div>
+            <div class="topright">
+                <img src="images/bardark.png" width="100%" title="The Bar">
+                <h2 class="homeHeaderbr"><span>STOP BY</span></h2>
+                <h4>VIEW EVENTS</h4>
+            </div>
+        </div>
+        <div class="clear"></div>
+        
+    </div>
+    
+    <script>
+		var top = $('html').offset().top;
+
+		// Submission box hover color change
+		$(document).on('mouseenter','.dominantHome',function(){
+			$(this) .css("background-image", "#222");});
+		$(document).on('mouseleave','.submission',function(){
+			$(this) .css("background-color", "transparent");});
+		
+		// Expand button hover color change
+		$(document).on('mouseenter','.expand',function(){
+			$(this) .css("background-color", "#E0A500");});
+		$(document).on('mouseleave','.expand',function(){
+			$(this) .css("background-color", "#F5D130");});
+		
+		// Close button hover color change	
+		$(document).on('mouseenter','.closeBtn',function(){
+			$(this) .css("background-color", "#E0A500");});
+		$(document).on('mouseleave','.closeBtn',function(){
+			$(this) .css("background-color", "#F5D130");});
+		
+		$(document).on('click','.expand',function(){
+			$(this) .prev(".lightbox") .fadeIn(350);
+			$(".darkscreen") .fadeIn(350);
+			$(".lightbox") .css("top", top);
+		});
+		
+		$(document).on('click','.closeBtn',function(){
+			$(".submission") .find(".lightbox") .fadeOut(350);
+			$(".darkscreen") .fadeOut(350);
+		});
+		
+	</script>
+    
+</body>
+</html>
